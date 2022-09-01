@@ -1,0 +1,28 @@
+.navbar{
+  display:flex;
+  justify-content: flex-end;
+  margin: 20px;
+}
+
+.logo-container{
+
+  .logo{
+    height:200px;
+    width:200px;
+    background: url('../../../public/brain.png'), linear-gradient(90deg, rgba(255,108,224,1) 0%, rgba(27,175,208,1) 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow:5px 5px 23px 1px #000000;
+    z-index:500;
+    margin-left:40px;
+    @media(max-width:700px){
+      margin-left:0px;
+    }
+  }
+  @media (max-width: 700px){
+    display:flex;
+    justify-content: center;
+    margin-top:80px;
+  }
+
+}
