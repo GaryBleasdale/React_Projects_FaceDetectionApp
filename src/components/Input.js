@@ -3,9 +3,14 @@ import React from "react";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import MainImage from "./MainImage";
+import Clarifai from 'clarifai'
+
 
 export default function Input(){
 
+
+
+ 
   const inputEl = React.useRef(null);
   const [enteredURL, URLSetter] = React.useState('')
   
