@@ -43,7 +43,6 @@ const requestOptions = {
     setLeft(json.outputs[0].data.regions[0].region_info.bounding_box.left_col)
     setHeight(json.outputs[0].data.regions[0].region_info.bounding_box.bottom_row -  json.outputs[0].data.regions[0].region_info.bounding_box.top_row)
     setWidth(json.outputs[0].data.regions[0].region_info.bounding_box.right_col - json.outputs[0].data.regions[0].region_info.bounding_box.left_col)
-    console.log(json.outputs[0].data.regions[0])
     return json
     }
     fetchData()

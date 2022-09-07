@@ -6,15 +6,21 @@ import RankingText from './components/RankingText';
 import Input from './components/Input';
 import MainImage from './components/MainImage';
 import Particle from './components/Particle';
+import Login from './components/Login';
 
 
 
 function App() {
   const [isReady, setIsReady] = React.useState(false);
+  const [signIn, setSignIn] = React.useState(true);
 
   useEffect(()=>{
     setIsReady(true)
   },[isReady])
+
+  const SignedIn = (e) =>{
+    return setSignIn(e)
+  }
   
   
   return (
@@ -39,17 +45,20 @@ function App() {
     { isReady === true &&
       <>
       <Particle />
-      
+      { signIn ===true && 
+      < Login SignedIn={SignedIn}/>
+      }
+      { signIn === false &&
       <div className='contents'>
-        <Navbar />
+        <Navbar SignedIn={SignedIn} />
         <Logo />
         <div className="main-container">
           <RankingText />
           <Input />
           <MainImage />
-  
         </div>
       </div>
+}
       </>
     
    }
