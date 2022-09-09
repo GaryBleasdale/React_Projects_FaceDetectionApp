@@ -74,7 +74,8 @@ const requestOptions = {
         left:`${left*100}%`,
         height:`${height*100}%`,
         width:`${width*100}%`,
-        border: 'green 3px solid'
+        border: 'green 3px solid',
+        backgroundColor:'rgba(21,239,58,0.2)'
       }}></div> 
    
       </div>

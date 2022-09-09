@@ -3,7 +3,7 @@ import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 
 
-const Login =({SignedIn})=>{
+const Login =({StatusSetter})=>{
   return (
     <div className='sign-in-div' style={{
       display:'flex',
@@ -21,10 +21,20 @@ const Login =({SignedIn})=>{
     <TextField id="filled-basic" label="Password" variant="filled" style={{
       width:'100%'
     }} />
-    <Button variant="contained" style={{
+    <div style={{
+      display:'flex',
+      width:'60%',
+      justifyContent:'space-around'
+    }}>
+      <Button variant="contained" style={{
+          height: '56px',
+          width: '100px'
+        }} onClick ={(e)=>StatusSetter(false, true, false)} >Log in</Button>
+      <Button variant="contained" style={{
         height: '56px',
         width: '100px'
-      }} onClick ={(e)=>SignedIn(false)} >Log in</Button>
+      }} onClick ={(e)=>StatusSetter(false,false,true)} >Register</Button>
+    </div>
     </div>
   )
 }

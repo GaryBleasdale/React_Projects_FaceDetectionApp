@@ -7,19 +7,24 @@ import Input from './components/Input';
 import MainImage from './components/MainImage';
 import Particle from './components/Particle';
 import Login from './components/Login';
+import Register from './components/register';
 
 
 
 function App() {
   const [isReady, setIsReady] = React.useState(false);
   const [signIn, setSignIn] = React.useState(true);
+  const [mainScreen,setMainScreen] = React.useState(false)
+  const [register, setRegister] = React.useState(false);
 
   useEffect(()=>{
     setIsReady(true)
   },[isReady])
 
-  const SignedIn = (e) =>{
-    return setSignIn(e)
+  const statusSetter = (s,m,r) =>{
+    setSignIn(s)
+    setMainScreen(m)
+    setRegister(r)
   }
   
   
@@ -46,11 +51,14 @@ function App() {
       <>
       <Particle />
       { signIn ===true && 
-      < Login SignedIn={SignedIn}/>
+      < Login StatusSetter={statusSetter}/>
       }
-      { signIn === false &&
+      { register === true &&
+      < Register StatusSetter={statusSetter}/>
+      }
+      { mainScreen === true &&
       <div className='contents'>
-        <Navbar SignedIn={SignedIn} />
+        <Navbar StatusSetter={statusSetter} />
         <Logo />
         <div className="main-container">
           <RankingText />
